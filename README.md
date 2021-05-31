@@ -56,7 +56,7 @@ SOFTWARE.
 
 ## Contributing
 
-nothing to shout out.
+[microevent](https://github.com/jeromeetienne/microevent.js), [drawingboard](https://github.com/Leimi/drawingboard.js#drawingboardjs).
 
 ## Tests
 

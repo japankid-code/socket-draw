@@ -16,14 +16,21 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
+  // listens from client
+  socket.on('client chat message', (msg) => {
+    // send back on client
+    io.emit('server chat message', msg);
+  });
+
+  // listens to board emits from client
+  socket.on('drawing', (msg) => {
+    // const msgData = JSON.parse(msg);
+    console.log(msg)
+    // send it to everyone
+    io.emit('drawing', msg);
+  })
   socket.on('disconnect', () => {
     console.log('user disconnected');
-  });
-});
-
-io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
   });
 });
 

@@ -2,26 +2,26 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
-    <style>
-      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-
-      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
-      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
-      #input:focus { outline: none; }
-      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
-
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages > li { padding: 0.5rem 1rem; }
-      #messages > li:nth-child(odd) { background: #efefef; }
-    </style>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/drawingboard.min.css">
   </head>
-  <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
+  <body class="h-screen grid grid-cols-4 items-center bg-gray-800">
+    
+    <section class='col-span-2 flex flex-col content-start w-full max-h-min'>
+      <div id='drawing-board' class='drawing-board self-end h-96 w-96 m-4'></div>
+    </section>
+
+    <div class="min-w-max max-w-sm flex flex-col border-4 col-span-2 rounded h-96">
+      <ul id="messages" class='bg-blue-400 list-none flex-grow'></ul>
+      <form id="form" action="" class='bg-gray-200 flex-end flex'>
+        <input id="input" autocomplete="off" class='m-2 flex-grow'/>
+        <button class='rounded bg-gray-400 p-1 px-2 m-1'>Send</button>
+      </form>
+    </div>
+    <!-- scripts start here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src='/javascript/mySocket.js'>
-</script>
+    <script src='/javascript/drawingboard.min.js'></script>
+    <script src='/javascript/mySocket.js'></script>
   </body>
 </html>
