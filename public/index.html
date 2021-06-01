@@ -3,34 +3,36 @@
   <head>
     <title>Socket.IO chat</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
+    <script src='/javascript/sketchSocket.js'></script>
   </head>
   <body class="h-screen grid grid-cols-4 items-center bg-gray-800">
     
-    <section class='m-4 col-span-2 flex flex-col w-full max-h-min justify-self-end max-w-xs'>
-      <p>Choose color (# hex)</p>
-      <input type="text" name="custom_color" placeholder="#FFFFFF" id="pickcolor" class="call-picker" />
-      <div id="color-holder" class="color-holder call-picker w-8 h-8"></div>
-      <button id="color-btn">Change color</button>
+    <section class='m-4 col-span-2 flex flex-col max-h-min justify-self-start min-w-min border-2 p-2 bg-gray-900 rounded-xl'>
+      <p class='text-white text-center'>Choose color (# hex)</p>
+      <div class="flex">
+        <input class="call-picker w-36 px-1 m-2" type="text" name="custom_color" placeholder="FFFFFF" id="pickcolor" />
+        <div id="color-holder" class="color-holder call-picker place-self-center w-8 h-8 bg-black border-2"></div>
+      </div>
+      <button id="color-btn" class='m-2 bg-gray-200 ring-4'>Change color</button>
       <br />
-      <p>Choose stroke width</p>
-      <input type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" class="stroke_width_picker" />
-      <button id="stroke-btn">Change stroke width</button>
+      <p class='text-white text-center'>Choose stroke width</p>
+      <input class="stroke_width_picker w-8 px-1.5 m-2 place-self-center" type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" />
+      <button id="stroke-btn" class='m-2 bg-gray-200 ring-4'>Change stroke width</button>
     </section>
 
-    <div class="min-w-max max-w-sm flex flex-col border-4 col-span-2 rounded h-96">
+    <!-- <div class="min-w-max max-w-sm flex flex-col border-4 col-span-2 rounded h-96">
       <ul id="messages" class='bg-blue-400 list-none flex-grow'></ul>
       <form id="form" action="" class='bg-gray-200 flex-end flex'>
         <input id="input" autocomplete="off" class='m-2 flex-grow'/>
         <button class='rounded bg-gray-400 p-1 px-2 m-1'>Send</button>
       </form>
-    </div>
+    </div> -->
     <!-- scripts start here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src='/javascript/chatSocket.js'></script>
-    <script src='/javascript/sketchSocket.js'></script>
+    <!-- <script src='/javascript/chatSocket.js'></script> -->
   </body>
 </html>

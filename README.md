@@ -56,7 +56,7 @@ SOFTWARE.
 
 ## Contributing
 
-Following this [blog post](https://gabrieltanner.org/blog/realtime-drawing-app), used this [drawing board](https://p5js.org/examples/drawing-continous-lines.html).
+Following this [blog post](https://gabrieltanner.org/blog/realtime-drawing-app), used this [drawing board](https://p5js.org/examples/drawing-continous-lines.html). Heavily relied on code from [this guy](https://github.com/TannerGabriel/DrawingApp).
 
 ## Tests
 

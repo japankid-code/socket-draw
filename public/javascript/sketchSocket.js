@@ -1,15 +1,17 @@
+let socket
 let color = '#000'
 let strokeWidth = 4
 let cv
 
 function setup() {
 	// Creating canvas
-	cv = createCanvas(windowWidth / 2, windowHeight / 3)
+	// cv = createCanvas(windowWidth / 2, windowHeight / 2)
+	cv = createCanvas(600, 400)
 	centerCanvas()
 	cv.background(255, 255, 255)
 
 	// Start the socket connection
-	socket = io.connect('http://localhost:3000')
+	socket = io.connect()
 
 	// Callback function
 	socket.on('mouse', data => {
@@ -29,8 +31,9 @@ function setup() {
 	// Adding a mousePressed listener to the button
 	color_btn.mousePressed(() => {
 		// Checking if the input is a valid hex color
-		if (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color_picker.value())) {
+		if (/(^[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color_picker.value())) {
 			color = color_picker.value()
+      color = "#" + color;
 			color_holder.style('background-color', color)
 		} else {
 			console.log('Enter a valid hex value')
@@ -44,14 +47,14 @@ function setup() {
 	})
 }
 
-function windowResized() {
-	centerCanvas()
-	cv.resizeCanvas(windowWidth / 2, windowHeight / 3, false)
-}
+// function windowResized() {
+// 	centerCanvas()
+// 	cv.resizeCanvas(windowWidth / 2, windowHeight / 2, false)
+// }
 
 
 function centerCanvas() {
-	const x = (windowWidth - width) / 2
+	const x = (windowWidth - width) / 1.1
 	const y = (windowHeight - height) / 2
 	cv.position(x, y)
 }
