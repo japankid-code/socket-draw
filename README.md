@@ -56,7 +56,7 @@ SOFTWARE.
 
 ## Contributing
 
-[microevent](https://github.com/jeromeetienne/microevent.js), [drawingboard](https://github.com/Leimi/drawingboard.js#drawingboardjs).
+Following this [blog post](https://gabrieltanner.org/blog/realtime-drawing-app), used this [drawing board](https://p5js.org/examples/drawing-continous-lines.html).
 
 ## Tests
 

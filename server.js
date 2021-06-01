@@ -12,8 +12,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-
-
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.broadcast.emit("hello", "world");
@@ -22,13 +20,6 @@ io.on('connection', (socket) => {
     // send back on client
     io.emit('server chat message', msg);
   });
-
-  // listens to board emits from client
-  socket.on('drawing', (msg) => {
-    // console.log(msg)
-    // send it to everyone
-    io.emit('drawing', msg);
-  })
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });

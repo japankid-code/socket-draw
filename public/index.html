@@ -3,12 +3,21 @@
   <head>
     <title>Socket.IO chat</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/drawingboard.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
   </head>
   <body class="h-screen grid grid-cols-4 items-center bg-gray-800">
     
-    <section class='col-span-2 flex flex-col content-start w-full max-h-min'>
-      <div id='drawing-board' class='drawing-board self-end h-96 w-96 m-4 z-10'></div>
+    <section class='m-4 col-span-2 flex flex-col w-full max-h-min justify-self-end max-w-xs'>
+      <p>Choose color (# hex)</p>
+      <input type="text" name="custom_color" placeholder="#FFFFFF" id="pickcolor" class="call-picker" />
+      <div id="color-holder" class="color-holder call-picker w-8 h-8"></div>
+      <button id="color-btn">Change color</button>
+      <br />
+      <p>Choose stroke width</p>
+      <input type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" class="stroke_width_picker" />
+      <button id="stroke-btn">Change stroke width</button>
     </section>
 
     <div class="min-w-max max-w-sm flex flex-col border-4 col-span-2 rounded h-96">
@@ -21,7 +30,7 @@
     <!-- scripts start here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src='/javascript/drawingboard.min.js'></script>
-    <script src='/javascript/mySocket.js'></script>
+    <script src='/javascript/chatSocket.js'></script>
+    <script src='/javascript/sketchSocket.js'></script>
   </body>
 </html>
