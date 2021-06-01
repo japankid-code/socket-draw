@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
+  socket.broadcast.emit("hello", "world");
   // listens from client
   socket.on('client chat message', (msg) => {
     // send back on client
@@ -24,8 +25,7 @@ io.on('connection', (socket) => {
 
   // listens to board emits from client
   socket.on('drawing', (msg) => {
-    // const msgData = JSON.parse(msg);
-    console.log(msg)
+    // console.log(msg)
     // send it to everyone
     io.emit('drawing', msg);
   })
