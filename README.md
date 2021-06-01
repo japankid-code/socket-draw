@@ -1,6 +1,6 @@
 # socket-chat
 
-socket.io app with chat. Link to repo is [here](https://github.com/japankid-code/socket-chat).
+socket.io app with chat. Link to repo is [here](https://github.com/japankid-code/socket-chat). Link to deployment on heroku [here](https://murmuring-lake-25396.herokuapp.com/)
 
 ![MIT badge](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge) ![language badge](https://img.shields.io/github/languages/top/japankid-code/socket-chat?style=for-the-badge)
 
